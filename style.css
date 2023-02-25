@@ -132,8 +132,7 @@ img {
     display: grid;
     grid-area: 1 / 1;
     position: relative;
-        overflow: hidden;
-        grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 #game_over {
@@ -150,6 +149,7 @@ img {
 
 .hidden {
     display: none;
+    visibility: hidden;
 }
 
 
