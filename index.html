@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guldbar spil</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="animation.css" />
+</head>
+
+<body>
+    <div id="screen">
+        <div id="game">
+            <div id="game_background">
+                <!-- her skal ikke være noget -->
+            </div>
+            <div id="game_elements">
+                <!-- Her indsætter jeg mine spil elementer -->
+                <div id="amyHennig_container" class="amyHennig_animation falling">
+                    <!-- in container add 'paused' to class-->
+                    <img id="amyHennig_sprite" src="" alt="" />
+                </div>
+                <div id="meganFox_container" class="meganFox_animation falling">
+                    <!-- in container add 'paused' to class-->
+                    <img id="meganFox_sprite" src="" alt="" />
+                </div>
+                <div id="kimSwift_container" class="kimSwift_animation falling">
+                    <!-- in container add 'paused' to class-->
+                    <img id="kimSwift_sprite" src="" alt="" />
+                </div>
+                <div id="corrinneYu_container" class="corrinneYu_animation falling">
+                    <!-- in container add 'paused' to class-->
+                    <img id="corrinneYu_sprite" src="" alt="" />
+                </div>
+                <div id="jadeRaymond_container" class="jadeRaymond_animation falling">
+                    <!-- in container add 'paused' to class-->
+                    <img id="jadeRaymond_sprite" src="" alt="" />
+                </div>
+                <div id="mileyCyrus_container" class="mileyCyrus_animation falling">
+                    <!-- in container add 'paused' to class-->
+                    <img id="mileyCyrus_sprite" src="" alt="" />
+                </div>
+                <div id="janeAusten_container" class="janeAusten_animation falling">
+                    <!-- in container add 'paused' to class-->
+                    <img id="janeAusten_sprite" src="" alt="" />
+                </div>
+                <div id="liseNorgaard_container" class="liseNorgaard_animation falling">
+                    <!-- in container add 'paused' to class-->
+                    <img id="liseNorgaard_sprite" src="" alt="" />
+                </div>
+                <div id="merylStreep_container" class="merylStreep_animation falling">
+                    <!-- in container add 'paused' to class-->
+                    <img id="merylStreep_sprite" src="" alt="" />
+                </div>
+                <div id="janeFonda_container" class="janeFonda_animation falling">
+                    <!-- in container add 'paused' to class-->
+                    <img id="janeFonda_sprite" src="" alt="" />
+                </div>
+            </div>
+            <div id="game_ui">
+                <div id="time_board"></div>
+
+                <!-- her laves liv, tid, points bar -->
+                <div id="score_board">
+                    <h2 id="score">Points: 0</h2>
+                </div>
+                <div id="life_board">
+                    <!-- <div id="heart_container"> -->
+                    <!-- check licens og put i footer class="paused" -->
+                    <img id="heart1" src="" class="addLife" />
+                    <img id="heart2" src="" class="addLife" />
+                    <img id="heart3" src="" class="addLife" />
+                    <!-- til mine sprites class="addLife loseLife" -->
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+        <div id="start_screen" class="hidden"></div>
+        <div id="game_over" class="hidden"></div>
+        <div id="level_complete" class="hidden"></div>
+        <div id="credits">
+            <!-- add class hidden -->
+            <a
+                href="https://gamemaker.io/en/blog/women-in-game-development#:~:text=They%20might%20not%20have%20always,acting%2C%20programming%2C%20and%20writing.">Learn
+                more women in game development</a>
+            <br>
+            <h2> Here are the links to the people behind the art / pictures:</h2>
+
+            <div id="creditAmyHennig">
+                <p> Amy Hennig:</p>
+                <a href="https://commons.wikimedia.org/wiki/File:Amy_hennig_gdca_2019_cropped.jpg">Official GDC
+                </a>,
+                <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0 via Wikimedia Commons
+                </a>
+            </div>
+            <br>
+            <div id="creditMeganFox">
+                <p> Megan Fox:</p>
+                <a href="https://glassbottomgames.com/press/">Megan fox</a>
+            </div>
+            <br>
+            <div id="creditKimSwift">
+                <p> Kim Swift:</p>
+                <a
+                    href="https://commons.wikimedia.org/wiki/File:Kim_Swift_-_Game_Developers_Conference_2010_-_Panel_Day_4_(1).jpg">Official
+                    GDC
+                </a>,
+                <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0 via Wikimedia Commons
+                </a>
+            </div>
+            <br>
+            <div id="creditCorrinneYu">
+                <p> Corrinne Yu:</p>
+                <a href="https://commons.wikimedia.org/wiki/File:CorrinneYu.jpg">Kenneth Scott
+                </a>,
+                <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0 via Wikimedia Commons
+                </a>
+            </div>
+            <br>
+            <div id="creditJadeRaymond">
+                <p> Jade Raymond:</p>
+                <a href="https://commons.wikimedia.org/wiki/File:Jade_Raymond_Official_Photo.jpg">Jade Raymond
+                </a>,
+                <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0 via Wikimedia Commons
+                </a>
+            </div>
+            <br>
+            <div id="creditMileyCyrus">
+                <p> Miley Cyrus:</p>
+                <a href="https://commons.wikimedia.org/wiki/File:Miley_Cyrus_at_Met_Gala_2018.jpg">Danilo Lauria
+                </a>,
+                <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0 via Wikimedia Commons
+                </a>
+            </div>
+            <br>
+            <div id="creditJaneAusten">
+                <p> Jane Austen:</p>
+                <a
+                    href="https://commons.wikimedia.org/wiki/File:Jane_Austen,_from_A_Memoir_of_Jane_Austen_(1870)_-_Original_scan_(cropped).png">From
+                    a watercolour by James Andrews of Maidenhead based on an unfinished work by Cassandra
+                    Austen. Engraving by
+                    Lizars. Public domain, via Wikimedia Commons
+                </a>
+            </div>
+            <br>
+            <div id="creditLiseNorgaard">
+                <p> Lise Nørgaard:</p>
+                <a href="https://commons.wikimedia.org/wiki/File:Lise_N%C3%B8rgaard.jpg">Mogens Engelund
+                </a>,
+                <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0 via Wikimedia Commons
+                </a>
+            </div>
+            <br>
+            <div id="creditMerylStreep">
+                <p> Meryl Streep:</p>
+                <a
+                    href="https://commons.wikimedia.org/wiki/File:Meryl_Streep_at_the_Tokyo_International_Film_Festival_2016_(32802149674)_(cropped).jpg">Dick
+                    Thomas Johnson from Tokyo, Japan
+                </a>,
+                <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0 via Wikimedia Commons
+                </a>
+            </div>
+            <br>
+            <div id="creditJaneFonda">
+                <p> Jane Fonda:</p>
+                <a href="https://commons.wikimedia.org/wiki/File:Jane_Fonda_Cannes_2015_2.jpg">Georges Biard
+                </a>,
+                <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0 via Wikimedia Commons
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
