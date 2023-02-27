@@ -1,146 +1,145 @@
 /* Animations */
+/* animations dont restart from scratch, but restart from current location */
 .falling {
-    animation-name: falling;
-    animation-duration: 9s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+  animation-name: falling;
+  animation-duration: 9s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  /* transform-origin: 0%; */
 }
 
 @keyframes falling {
-    0% {
-            transform: translate(0, -300%);
-        }
-    
-        60% {
-            transform: translate(0, 200%);
-        }
-    
-        100% {
-            transform: translate(-900%, 200%);
-        }
+  0% {
+    transform: translate(0, -300%);
+  }
+
+  60% {
+    transform: translate(0, 300%);
+  }
+
+  100% {
+    transform: translate(-900%, 300%);
+  }
 }
 .falling2 {
-    animation-name: falling;
-        animation-duration: 9s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-delay: 3s;
+  animation-name: falling2;
+  animation-duration: 9s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
 }
 @keyframes falling2 {
-    0% {
-            transform: translate(0, -300%);
-        }
-    
-        60% {
-            transform: translate(0, 200%);
-        }
-    
-        100% {
-            transform: translate(-900%, 200%);
-        }
+  0% {
+    transform: translate(0, -300%);
+  }
+
+  60% {
+    transform: translate(0, 300%);
+  }
+
+  100% {
+    transform: translate(-900%, 300%);
+  }
 }
 .falling3 {
-    animation-name: falling3;
-    animation-duration: 9s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-delay: 6s;
+  animation-name: falling3;
+  animation-duration: 9s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 6s;
 }
 
 @keyframes falling3 {
-    0% {
-        transform: translate(0, -300%);
-    }
-
-    60% {
-        transform: translate(0, 200%);
-    }
-    100% {
-            transform: translate(-900%, 200%);
-    }
+  0% {
+    transform: translate(0, -300%);
+  }
+  60% {
+    transform: translate(0, 300%);
+  }
+  100% {
+    transform: translate(-900%, 300%);
+  }
 }
 
 .paused {
-    /* animation-name: paused; */
-    animation-play-state: paused;
-    /* animation-fill-mode: forwards; */
+  /* animation-name: paused; */
+  animation-play-state: paused;
+  /* animation-fill-mode: forwards; */
 }
 
-
 .clickBad {
-    animation-name: clickBad;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    image-rendering: smooth;
+  animation-name: clickBad;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  image-rendering: smooth;
 }
 
 @keyframes clickBad {
-    0% {
-        transform: scale(1) rotate(0deg);
-    }
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
 
-    10% {
-        transform: rotate(10deg);
-    }
+  10% {
+    transform: rotate(10deg);
+  }
 
-    20% {
-        transform: rotate(-10deg);
-    }
+  20% {
+    transform: rotate(-10deg);
+  }
 
-    30% {
-        transform: rotate(10deg);
-    }
+  30% {
+    transform: rotate(10deg);
+  }
 
-    40% {
-        transform: rotate(-10deg);
-    }
+  40% {
+    transform: rotate(-10deg);
+  }
 
-    50% {
-        transform: rotate(10deg);
-    }
+  50% {
+    transform: rotate(10deg);
+  }
 
-    60% {
-        transform: rotate(-10deg);
-    }
+  60% {
+    transform: rotate(-10deg);
+  }
 
-    70% {
-        transform: rotate(10deg);
-    }
+  70% {
+    transform: rotate(10deg);
+  }
 
-    80% {
-        transform: rotate(-10deg);
-    }
+  80% {
+    transform: rotate(-10deg);
+  }
 
-    90% {
-        transform: scale(2) rotate(10deg);
-    }
+  90% {
+    transform: scale(2) rotate(10deg);
+  }
 
-    100% {
-        transform: scale(0) rotate(360deg);
-    }
+  100% {
+    transform: scale(0) rotate(360deg);
+  }
 }
 
 .clickGood {
-    animation-name: clickGood;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    image-rendering: smooth;
-    
+  animation-name: clickGood;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  image-rendering: smooth;
 }
 
 @keyframes clickGood {
-    0% {
-        transform: translate(0%, 200%);
-    }
+  0% {
+    transform: translate(0%, 200%);
+  }
 
-    100% {
-        transform: translate(800%, 200%);
-    }
-    /* 0% {
+  100% {
+    transform: translate(800%, 200%);
+  }
+  /* 0% {
         transform: scale(2) rotate(0deg);
     }
 
@@ -150,8 +149,8 @@
         0% {
             transform: translate(0, -300%);
         } */
-    
-        /* 0% {
+
+  /* 0% {
             transform: translate(0, 0%);
         }
     60%{
@@ -161,8 +160,7 @@
             transform: translate(900%, 200%);
         } */
 
-
-    /* alternativ
+  /* alternativ
   10% {
        transform: scale(2) rotate(-360deg);
      }
@@ -173,67 +171,67 @@
 }
 
 .addLife {
-    animation-name: addLife;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    filter: drop-shadow(0px 0px 10px white);
+  animation-name: addLife;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  filter: drop-shadow(0px 0px 10px white);
 }
 
 @keyframes addLife {
-    0% {
-        transform: scale(0) rotate(0deg);
-    }
+  0% {
+    transform: scale(0) rotate(0deg);
+  }
 
-    25% {
-        transform: scale(2) rotate(90deg);
-    }
+  25% {
+    transform: scale(2) rotate(90deg);
+  }
 
-    50% {
-        transform: scale(1) rotate(180deg);
-    }
+  50% {
+    transform: scale(1) rotate(180deg);
+  }
 
-    75% {
-        transform: scale(2) rotate(270deg);
-    }
+  75% {
+    transform: scale(2) rotate(270deg);
+  }
 
-    100% {
-        transform: scale(1) rotate(360deg);
-    }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
 }
 
 .loseLife {
-    animation-name: loseLife;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+  animation-name: loseLife;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 @keyframes loseLife {
-    0% {
-        transform: scale(2) rotate(0deg);
-    }
+  0% {
+    transform: scale(2) rotate(0deg);
+  }
 
-    25% {
-        transform: scale(2) rotate(90deg);
-    }
+  25% {
+    transform: scale(2) rotate(90deg);
+  }
 
-    50% {
-        transform: scale(1) rotate(180deg);
-    }
+  50% {
+    transform: scale(1) rotate(180deg);
+  }
 
-    75% {
-        transform: scale(2) rotate(270deg);
-    }
+  75% {
+    transform: scale(2) rotate(270deg);
+  }
 
-    99% {
-        transform: scale(1) rotate(359deg);
-    }
+  99% {
+    transform: scale(1) rotate(359deg);
+  }
 
-    100% {
-        transform: scale(0.5) rotate(360deg);
-        filter: grayscale(75%) blur(0.5px);
-    }
+  100% {
+    transform: scale(0.5) rotate(360deg);
+    filter: grayscale(75%) blur(0.5px);
+  }
 }

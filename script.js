@@ -1,4 +1,4 @@
-// document.querySelector("#credits").classList.remove("hidden"); 
+// document.querySelector("#credits").classList.remove("hidden");
 
 "use-strict";
 console.log("hello JS");
@@ -43,7 +43,7 @@ function gameStart() {
     .querySelector("#jadeRaymond_container")
     .addEventListener("mousedown", clickJadeRaymond);
 
-    document
+  document
     .querySelector("#mileyCyrus_container")
     .addEventListener("mousedown", clickMileyCyrus);
   document
@@ -106,7 +106,7 @@ function clickMeganFox() {
     .querySelector("#meganFox_container")
     .addEventListener("animationend", restartMeganFox);
 
-  // adding points 
+  // adding points
   getPoints();
   getPoints();
 }
@@ -130,7 +130,7 @@ function clickKimSwift() {
     .querySelector("#kimSwift_container")
     .addEventListener("animationend", restartKimSwift);
 
-    // adding points 
+  // adding points
   getPoints();
   getPoints();
 }
@@ -225,9 +225,9 @@ function restartMeganFox() {
   document.querySelector("#meganFox_container").classList.remove("paused");
 
   // restarting the falling animation
-  document.querySelector("#meganFox_container").classList.remove("falling");
+  document.querySelector("#meganFox_container").classList.remove("falling2");
   document.querySelector("#meganFox_container").offsetLeft;
-  document.querySelector("#meganFox_container").classList.add("falling");
+  document.querySelector("#meganFox_container").classList.add("falling2");
 
   // restarting the event looking for clicks on meganFox
   document
@@ -250,9 +250,9 @@ function restartKimSwift() {
   document.querySelector("#kimSwift_container").classList.remove("paused");
 
   // restarting the falling animation
-  document.querySelector("#kimSwift_container").classList.remove("falling");
+  document.querySelector("#kimSwift_container").classList.remove("falling2");
   document.querySelector("#kimSwift_container").offsetLeft;
-  document.querySelector("#kimSwift_container").classList.add("falling");
+  document.querySelector("#kimSwift_container").classList.add("falling2");
 
   // restarting the event looking for clicks on kimSwift
   document
@@ -275,9 +275,9 @@ function restartCorrinneYu() {
   document.querySelector("#corrinneYu_container").classList.remove("paused");
 
   // restarting the falling animation
-  document.querySelector("#corrinneYu_container").classList.remove("falling");
+  document.querySelector("#corrinneYu_container").classList.remove("falling3");
   document.querySelector("#corrinneYu_container").offsetLeft;
-  document.querySelector("#corrinneYu_container").classList.add("falling");
+  document.querySelector("#corrinneYu_container").classList.add("falling3");
 
   // restarting the event looking for clicks on corrinneYu
   document
@@ -300,9 +300,9 @@ function restartJadeRaymond() {
   document.querySelector("#jadeRaymond_container").classList.remove("paused");
 
   // restarting the falling animation
-  document.querySelector("#jadeRaymond_container").classList.remove("falling");
+  document.querySelector("#jadeRaymond_container").classList.remove("falling3");
   document.querySelector("#jadeRaymond_container").offsetLeft;
-  document.querySelector("#jadeRaymond_container").classList.add("falling");
+  document.querySelector("#jadeRaymond_container").classList.add("falling3");
 
   // restarting the event looking for clicks on jadeRaymond
   document
