@@ -10,15 +10,15 @@
 
 @keyframes falling {
   0% {
-    transform: translate(0, -10vw);
+    transform: translate(0, -10vh);
   }
 
   60% {
-    transform: translate(0, 70vw);
+    transform: translate(0, 120vh);
   }
 
   100% {
-    transform: translate(-100vw, 70vw);
+    transform: translate(-100vw, 120vh);
   }
 }
 .falling2 {
@@ -30,15 +30,15 @@
 }
 @keyframes falling2 {
   0% {
-    transform: translate(0, -10vw);
+    transform: translate(0, -10vh);
   }
 
   60% {
-    transform: translate(0, 70vw);
+    transform: translate(0, 120vh);
   }
 
   100% {
-    transform: translate(-100vw, 70vw);
+    transform: translate(-100vw, 120vh);
   }
 }
 .falling3 {
@@ -51,13 +51,13 @@
 
 @keyframes falling3 {
   0% {
-    transform: translate(0, -10vw);
+    transform: translate(0, -10vh);
   }
   60% {
-    transform: translate(0, 70vw);
+    transform: translate(0, 120vh);
   }
   100% {
-    transform: translate(-100vw, 70vw);
+    transform: translate(-100vw, 120vh);
   }
 }
 
@@ -67,8 +67,8 @@
   /* animation-fill-mode: forwards; */
 }
 
-.clickBad {
-  animation-name: clickBad;
+.clickBadMove {
+  animation-name: clickBadMove;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
@@ -76,7 +76,7 @@
   image-rendering: smooth;
 }
 
-@keyframes clickBad {
+@keyframes clickBadMove {
   0% {
     transform: scale(1) rotate(0deg);
   }
@@ -122,8 +122,8 @@
   }
 }
 
-.clickGood {
-  animation-name: clickGood;
+.clickGoodMove {
+  animation-name: clickGoodMove;
   animation-duration: 2s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
@@ -131,13 +131,15 @@
   image-rendering: smooth;
 }
 
-@keyframes clickGood {
+@keyframes clickGoodMove {
   0% {
-    transform: translate(0, 200%);
+    transform: translate(0, 0);
   }
-
+  60% {
+    transform: translate(0vw, 80vh);
+  }
   100% {
-    transform: translate(800%, 200%);
+    transform: translate(80vw, 80vh);
   }
   /* 0% {
         transform: scale(2) rotate(0deg);
