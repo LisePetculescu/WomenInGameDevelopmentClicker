@@ -10,15 +10,15 @@
 
 @keyframes falling {
   0% {
-    transform: translate(0, -300%);
+    transform: translate(0, -10vw);
   }
 
   60% {
-    transform: translate(0, 300%);
+    transform: translate(0, 70vw);
   }
 
   100% {
-    transform: translate(-900%, 300%);
+    transform: translate(-100vw, 70vw);
   }
 }
 .falling2 {
@@ -30,15 +30,15 @@
 }
 @keyframes falling2 {
   0% {
-    transform: translate(0, -300%);
+    transform: translate(0, -10vw);
   }
 
   60% {
-    transform: translate(0, 300%);
+    transform: translate(0, 70vw);
   }
 
   100% {
-    transform: translate(-900%, 300%);
+    transform: translate(-100vw, 70vw);
   }
 }
 .falling3 {
@@ -51,13 +51,13 @@
 
 @keyframes falling3 {
   0% {
-    transform: translate(0, -300%);
+    transform: translate(0, -10vw);
   }
   60% {
-    transform: translate(0, 300%);
+    transform: translate(0, 70vw);
   }
   100% {
-    transform: translate(-900%, 300%);
+    transform: translate(-100vw, 70vw);
   }
 }
 
@@ -133,7 +133,7 @@
 
 @keyframes clickGood {
   0% {
-    transform: translate(0%, 200%);
+    transform: translate(0, 200%);
   }
 
   100% {
