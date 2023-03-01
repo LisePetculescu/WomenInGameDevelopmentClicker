@@ -3,7 +3,7 @@
 "use-strict";
 console.log("hello JS");
 
-window.addEventListener("load", gameStart);
+window.addEventListener("load", start);
 
 let points = 0;
 let lives = 0;
@@ -11,6 +11,26 @@ let lives = 0;
 
 function start() {
   console.log("start is starting");
+  // remove event start button
+  // document
+  //   .querySelector("#startGameBTN")
+  //   .removeEventListener("click", gameStart);
+
+  // // remove event to credits button
+  // document
+  //   .querySelector("#creditsBTN")
+  //   .removeEventListener("click", creditsPage);
+
+  // hide credits page
+  document.querySelector("#credits").classList.add("hidden");
+  // show start screen
+  document.querySelector("#start_screen").classList.remove("hidden");
+  // hide game screen
+  document.querySelector("#game").classList.add("hidden");
+  // add function to start button
+  document.querySelector("#startGameBTN").addEventListener("click", gameStart);
+  // add function to credits button
+  document.querySelector("#creditsBTN").addEventListener("click", creditsPage);
 
   // lav en start skærm med en start knap (og regler?)
   //   fjern hidden class på start_screen
@@ -20,6 +40,11 @@ function start() {
 
 function gameStart() {
   console.log("game is starting");
+
+  // remove start screen
+  document.querySelector("#start_screen").classList.add("hidden");
+  // show game screen
+  document.querySelector("#game").classList.remove("hidden");
 
   points = 0;
   lives = 3;
@@ -152,10 +177,18 @@ function clickBad() {
   // when animation clickGood done, restart falling animation
   bad.addEventListener("animationend", restartAll);
 
-  // adding points + life
-  losePoints();
+  // losing points + life
+  if (bad == document.querySelector(".lose2points") && lives > 0) {
+    losing2Points();
+  } else if (bad == document.querySelector(".lose4points") && lives > 0) {
+    losing4Points();
+  } else {
+    losing6Points();
+  }
   minusLife();
 }
+
+// restarting animations
 
 function restartAll() {
   console.log("restarting animation");
@@ -192,6 +225,8 @@ function restartAll() {
     .forEach((bad) => bad.addEventListener("mousedown", clickBad));
 }
 
+// adding and removing points
+
 function get2Points() {
   console.log("you're getting points");
 
@@ -203,7 +238,7 @@ function get2Points() {
   displayPoints();
 }
 
-function lose2Points() {
+function losing2Points() {
   console.log("you're losing 2 points");
 
   //adding one point
@@ -214,7 +249,7 @@ function lose2Points() {
   displayPoints();
 }
 
-function lose4Points() {
+function losing4Points() {
   console.log("you're losing 4 points");
 
   //adding one point
@@ -225,7 +260,7 @@ function lose4Points() {
   displayPoints();
 }
 
-function lose6Points() {
+function losing6Points() {
   console.log("you're losing 6 points");
 
   //adding one point
@@ -472,16 +507,16 @@ function lose6Points() {
 //   displayPoints();
 // }
 
-function losePoints() {
-  console.log("you're losing points");
+// function losePoints() {
+//   console.log("you're losing points");
 
-  //adding one point
-  points--;
-  console.log("you have " + points + " points left");
+//   //adding one point
+//   points--;
+//   console.log("you have " + points + " points left");
 
-  // calling the displayPoints function
-  displayPoints();
-}
+//   // calling the displayPoints function
+//   displayPoints();
+// }
 
 function displayPoints() {
   console.log("display points:" + points);
@@ -533,6 +568,20 @@ function game_over() {
   console.log("You lose :'(");
 }
 
-// function restartGame()
+function stopGame() {
+  console.log("stop game");
+}
 
-// function creditsPage()
+function restartGame() {
+  console.log("restartGame");
+}
+
+function creditsPage() {
+  console.log("creditsPage");
+  // remove start screen
+  document.querySelector("#start_screen").classList.add("hidden");
+  // show credits page
+  document.querySelector("#credits").classList.remove("hidden");
+  // back to start screen button
+  document.querySelector("#backBTN").addEventListener("click", start);
+}

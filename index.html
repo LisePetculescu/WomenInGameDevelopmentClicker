@@ -43,17 +43,17 @@
             <img id="jadeRaymond_sprite" src="images/jadeRaymond.png" alt="" />
             <p>Jade Raymond</p>
           </div>
-          <div id="mileyCyrus_container" class="fall1 bad -points">
+          <div id="mileyCyrus_container" class="fall1 bad lose2points">
             <!-- in container add 'paused' to class-->
             <img id="mileyCyrus_sprite" src="images/mileyCyrus2.png" alt="" />
             <p>Miley Cyrus</p>
           </div>
-          <div id="janeAusten_container" class="fall1 bad --points">
+          <div id="janeAusten_container" class="fall1 bad lose4points">
             <!-- in container add 'paused' to class-->
             <img id="janeAusten_sprite" src="images/janeAusten2.png" alt="" />
             <p>Jane Austen</p>
           </div>
-          <div id="liseNorgaard_container" class="fall2 bad ---points">
+          <div id="liseNorgaard_container" class="fall2 bad lose6points">
             <!-- in container add 'paused' to class-->
             <img
               id="liseNorgaard_sprite"
@@ -62,12 +62,12 @@
             />
             <p>Lise Nørgaard</p>
           </div>
-          <div id="merylStreep_container" class="fall2 bad -points">
+          <div id="merylStreep_container" class="fall2 bad lose2points">
             <!-- in container add 'paused' to class-->
             <img id="merylStreep_sprite" src="images/merylStreep2.png" alt="" />
             <p>Meryl Streep</p>
           </div>
-          <div id="janeFonda_container" class="fall3 bad --points">
+          <div id="janeFonda_container" class="fall3 bad lose4points">
             <!-- in container add 'paused' to class-->
             <img id="janeFonda_sprite" src="images/janeFonda.png" alt="" />
             <p>Jane Fonda</p>
@@ -91,17 +91,20 @@
           </div>
         </div>
       </div>
-      <div id="start_screen" class="hidden"></div>
+      <div id="start_screen" class="hidden">
+        <button id="startGameBTN" type="button">Start Game</button>
+        <button id="creditsBTN" type="button">See Credits</button>
+      </div>
       <div id="game_over" class="hidden"></div>
       <div id="level_complete" class="hidden"></div>
       <div id="credits" class="hidden">
         <!-- add class hidden -> it's not working? -> it works when put on credit1 and credit seperately-->
         <div id="credits1">
           <br />
+         <button id="backBTN" type="button">back</button>
           <a
             href="https://gamemaker.io/en/blog/women-in-game-development#:~:text=They%20might%20not%20have%20always,acting%2C%20programming%2C%20and%20writing."
-            >Learn more about women in game development</a
-          >
+            >Learn more about women in game development</a>
           <br />
           <h2>Here are the links to the people behind the art / pictures:</h2>
 
@@ -214,17 +217,18 @@
           </div>
           <br />
           <div id="404Fault">
+            <p>404 icons</p>
             <a href="https://www.flaticon.com/free-icons/404" title="404 icons"
               >404 icons created by Smashicons - Flaticon</a
             >
           </div>
           <br />
-          <div id="codingPic">
+          <!-- <div id="codingPic">
             The game's background image by
             <a
               href="https://www.freepik.com/free-photo/html-css-collage-concept-with-person_36295456.htm#query=coding&position=21&from_view=search&track=sph"
-              >Freepik</a
-            >
+              >Freepik</a -->
+            <!-- > -->
           </div>
         </div>
       </div>
