@@ -592,5 +592,5 @@ function creditsPage() {
   // show credits page
   document.querySelector("#credits").classList.remove("hidden");
   // back to start screen button
-  document.querySelector("#backBTN").addEventListener("click", start);
+  document.querySelector("#backBTN2").addEventListener("click", start);
 }
