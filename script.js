@@ -7,20 +7,12 @@ window.addEventListener("load", start);
 
 let points = 0;
 let lives = 0;
-// let time = 120;
 
 function start() {
   console.log("start is starting");
-  // remove event start button
-  // document
-  //   .querySelector("#startGameBTN")
-  //   .removeEventListener("click", gameStart);
 
-  // // remove event to credits button
-  // document
-  //   .querySelector("#creditsBTN")
-  //   .removeEventListener("click", creditsPage);
-
+  // remove level complete screen
+  document.querySelector("#level_complete").classList.add("hidden");
   // hide credits page
   document.querySelector("#credits").classList.add("hidden");
   // show start screen
@@ -31,15 +23,13 @@ function start() {
   document.querySelector("#startGameBTN").addEventListener("click", gameStart);
   // add function to credits button
   document.querySelector("#creditsBTN").addEventListener("click", creditsPage);
-
-  // lav en start skærm med en start knap (og regler?)
-  //   fjern hidden class på start_screen
-  //   document.querySelector("#start_screen").classList.remove("hidden");
-  // lav en start over button på level_complete og game_over
 }
 
 function gameStart() {
   console.log("game is starting");
+
+  // remove game over screen
+  document.querySelector("#game_over").classList.add("hidden");
 
   // remove start screen
   document.querySelector("#start_screen").classList.add("hidden");
@@ -54,6 +44,9 @@ function gameStart() {
 
   // events for clicking
   addClickEvent();
+
+  // checking for points and lives
+  displayPoints();
 }
 
 function addFalling() {
@@ -137,6 +130,10 @@ function clickGood() {
   }
   get2Points();
 
+  if (points >= 20) {
+    level_complete();
+  }
+
   // // remove event so you can only mousedown once at a time
   // document
   //   .querySelector("#amyHennig_container")
@@ -178,9 +175,9 @@ function clickBad() {
   bad.addEventListener("animationend", restartAll);
 
   // losing points + life
-  if (bad == document.querySelector(".lose2points") && lives > 0) {
+  if (bad == document.querySelector(".lose2points") && lives >= 0) {
     losing2Points();
-  } else if (bad == document.querySelector(".lose4points") && lives > 0) {
+  } else if (bad == document.querySelector(".lose4points") && lives >= 0) {
     losing4Points();
   } else {
     losing6Points();
@@ -532,10 +529,13 @@ function minusLife() {
 
   //calling the displayMinusLife function
   displayMinusLife();
-
   // removing the life
   lives--;
   console.log("you have " + lives + " lives left");
+
+  if (lives <= 0) {
+    game_over();
+  }
 }
 
 function displayMinusLife() {
@@ -562,10 +562,19 @@ function displayPlusLife() {
 
 function level_complete() {
   console.log("You win!");
+  document.querySelector("#level_complete").classList.remove("hidden");
+  document.querySelector("#game").classList.add("hidden");
+
+  // back to start screen button
+  document.querySelector("#backBTN").addEventListener("click", start);
 }
 
 function game_over() {
   console.log("You lose :'(");
+  document.querySelector("#game_over").classList.remove("hidden");
+  document.querySelector("#game").classList.add("hidden");
+
+  document.querySelector("#restartBTN").addEventListener("click", gameStart);
 }
 
 function stopGame() {

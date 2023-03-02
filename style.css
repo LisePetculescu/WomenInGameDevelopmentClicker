@@ -183,18 +183,22 @@ img {
 
 #game_over {
   grid-area: 1 / 1;
-  background-color: rgb(123, 19, 221);
+  background-color: rgb(230, 43, 52);
   z-index: 999;
 }
 
 #level_complete {
   grid-area: 1 / 1;
-  background-color: aqua;
+  background-color: rgb(81, 214, 136);
   z-index: 999;
 }
 
+/* #game_over.hidden
+#level_complete.hidden
+#credits.hidden
+#start_screen.hidden */
 .hidden {
   display: none !important;
   /* !important */
-  visibility: hidden;
+  /* visibility: hidden; */
 }
