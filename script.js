@@ -50,6 +50,7 @@ function gameStart() {
 
 function addFalling() {
   console.log("addFalling");
+
   document
     .querySelectorAll(".fall1")
     .forEach((fall1) => fall1.classList.add("falling"));
@@ -564,6 +565,8 @@ function level_complete() {
   document.querySelector("#level_complete").classList.remove("hidden");
   document.querySelector("#game").classList.add("hidden");
 
+  stopGame();
+
   // back to start screen button
   document.querySelector("#backBTN").addEventListener("click", start);
 }
@@ -573,11 +576,36 @@ function game_over() {
   document.querySelector("#game_over").classList.remove("hidden");
   document.querySelector("#game").classList.add("hidden");
 
+  stopGame();
+
   document.querySelector("#restartBTN").addEventListener("click", gameStart);
 }
 
 function stopGame() {
   console.log("stop game");
+
+  // remove animations classes
+  document
+    .querySelectorAll(".fall1")
+    .forEach((fall1) => fall1.classList.remove("falling"));
+  document
+    .querySelectorAll(".fall2")
+    .forEach((fall2) => fall2.classList.remove("falling2"));
+  document
+    .querySelectorAll(".fall3")
+    .forEach((fall3) => fall3.classList.remove("falling3"));
+
+  document.querySelectorAll(".fall1").forEach((fall1) => fall1.offsetLeft);
+  document.querySelectorAll(".fall2").forEach((fall2) => fall2.offsetLeft);
+  document.querySelectorAll(".fall3").forEach((fall3) => fall3.offsetLeft);
+
+  // remove click events
+  document
+    .querySelectorAll(".good")
+    .forEach((good) => good.removeEventListener("mousedown", clickGood));
+  document
+    .querySelectorAll(".bad")
+    .forEach((bad) => bad.removeEventListener("mousedown", clickBad));
 }
 
 function creditsPage() {
