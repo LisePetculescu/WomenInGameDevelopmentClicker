@@ -30,14 +30,13 @@ function gameStart() {
 
   // remove game over screen
   document.querySelector("#game_over").classList.add("hidden");
-
   // remove start screen
   document.querySelector("#start_screen").classList.add("hidden");
   // show game screen
   document.querySelector("#game").classList.remove("hidden");
 
-  points = 0;
-  lives = 3;
+  resetLives();
+  resetPoints();
 
   //   add falling class to elements instead of in html
   addFalling();
@@ -46,7 +45,7 @@ function gameStart() {
   addClickEvent();
 
   // checking for points and lives
-  displayPoints();
+  // displayPoints();
 }
 
 function addFalling() {
@@ -541,8 +540,8 @@ function minusLife() {
 function displayMinusLife() {
   console.log("display lost lives:" + lives);
 
-  document.querySelector("#heart" + lives).classList.remove("loseLife");
-  document.querySelector("#heart" + lives).classList.add("addLife");
+  document.querySelector("#heart" + lives).classList.remove("addLife");
+  document.querySelector("#heart" + lives).classList.add("loseLife");
 }
 
 function plusLife() {
@@ -554,8 +553,8 @@ function plusLife() {
 }
 
 function displayPlusLife() {
-  document.querySelector("#heart" + lives).classList.remove("addLife");
-  document.querySelector("#heart" + lives).classList.add("loseLife");
+  document.querySelector("#heart" + lives).classList.remove("loseLife");
+  document.querySelector("#heart" + lives).classList.add("addLife");
 }
 
 // End of game
@@ -581,10 +580,6 @@ function stopGame() {
   console.log("stop game");
 }
 
-function restartGame() {
-  console.log("restartGame");
-}
-
 function creditsPage() {
   console.log("creditsPage");
   // remove start screen
@@ -593,4 +588,26 @@ function creditsPage() {
   document.querySelector("#credits").classList.remove("hidden");
   // back to start screen button
   document.querySelector("#backBTN2").addEventListener("click", start);
+}
+
+// restart the game
+function restartGame() {
+  console.log("restartGame");
+}
+
+function resetPoints() {
+  points = 0;
+
+  displayPoints();
+}
+
+function resetLives() {
+  lives = 3;
+
+  document.querySelector("#heart1").classList.remove("loseLife");
+  document.querySelector("#heart2").classList.remove("loseLife");
+  document.querySelector("#heart3").classList.remove("loseLife");
+  document.querySelector("#heart1").classList.add("addLife");
+  document.querySelector("#heart2").classList.add("addLife");
+  document.querySelector("#heart3").classList.add("addLife");
 }

@@ -172,8 +172,8 @@
      } */
 }
 
-.addLife {
-  animation-name: addLife;
+.loseLife {
+  animation-name: loseLife;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
@@ -181,7 +181,7 @@
   filter: drop-shadow(0px 0px 10px white);
 }
 
-@keyframes addLife {
+@keyframes loseLife {
   0% {
     transform: scale(0) rotate(0deg);
   }
@@ -203,15 +203,15 @@
   }
 }
 
-.loseLife {
-  animation-name: loseLife;
+.addLife {
+  animation-name: addLife;
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
-@keyframes loseLife {
+@keyframes addLife {
   0% {
     transform: scale(2) rotate(0deg);
   }
