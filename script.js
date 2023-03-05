@@ -10,6 +10,7 @@ let lives = 0;
 
 function start() {
   console.log("start is starting");
+  
 
   // remove level complete screen
   document.querySelector("#level_complete").classList.add("hidden");
@@ -27,6 +28,7 @@ function start() {
 
 function gameStart() {
   console.log("game is starting");
+  document.querySelector("#game").classList.add("screenShift");
 
   // remove game over screen
   document.querySelector("#game_over").classList.add("hidden");
@@ -34,6 +36,9 @@ function gameStart() {
   document.querySelector("#start_screen").classList.add("hidden");
   // show game screen
   document.querySelector("#game").classList.remove("hidden");
+
+  document.querySelector("#level_complete").classList.remove("screenShift");
+  document.querySelector("#game_over").classList.remove("screenShift");
 
   resetLives();
   resetPoints();
@@ -581,28 +586,35 @@ function deadline() {
 function level_complete() {
   console.log("You win!");
   document.querySelector("#level_complete").classList.remove("hidden");
+  document.querySelector("#level_complete").classList.add("screenShift");
   document.querySelector("#game").classList.add("hidden");
 
   stopGame();
 
   // back to start screen button
-  document.querySelector("#backBTN").addEventListener("click", start);
+ document.querySelector("#backBTN").addEventListener("click", start)
+document.querySelector("#start_screen").classList.add("screenShift");
+ 
 }
 
 function game_over() {
   console.log("You lose :'(");
   document.querySelector("#game_over").classList.remove("hidden");
+  document.querySelector("#game_over").classList.add("screenShift");
   document.querySelector("#game").classList.add("hidden");
 
   stopGame();
 
-  document.querySelector("#restartBTN").addEventListener("click", gameStart);
+  document.querySelector("#restartBTN").addEventListener("click", gameStart)
+    
+  
 }
 
 function stopGame() {
   console.log("stop game");
 
   // remove animations classes
+
   document
     .querySelectorAll(".fall1")
     .forEach((fall1) => fall1.classList.remove("falling"));
