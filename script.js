@@ -51,6 +51,9 @@ function gameStart() {
 
 //  start timer
 startTimer();
+
+document.querySelector("#gameSound").currentTime = 0;
+document.querySelector("#gameSound").play();
 }
 
 function addFalling() {
@@ -116,6 +119,9 @@ function clickGood() {
   let good = this;
   console.log(good);
 
+  document.querySelector("#goodSound").currentTime = 0;
+  document.querySelector("#goodSound").play();
+
   // remove event so you can only mousedown once at a time
   good.removeEventListener("mousedown", clickGood);
 
@@ -165,6 +171,11 @@ function clickBad() {
   console.log("clicked bad");
   let bad = this;
   console.log(bad);
+
+  document.querySelector("#badSound").currentTime = 0;
+  document.querySelector("#badSound").play();
+  let ohOhh = document.querySelector("#badSound");
+  ohOhh.volume = 0.5;
 
   // remove event so you can only mousedown once at a time
   bad.removeEventListener("mousedown", clickBad);
@@ -589,6 +600,10 @@ function level_complete() {
   document.querySelector("#level_complete").classList.add("screenShift");
   document.querySelector("#game").classList.add("hidden");
 
+  document.querySelector("#gameSound").pause();
+  document.querySelector("#winSound").currentTime = 0;
+  document.querySelector("#winSound").play();
+
   stopGame();
 
   // back to start screen button
@@ -602,6 +617,10 @@ function game_over() {
   document.querySelector("#game_over").classList.remove("hidden");
   document.querySelector("#game_over").classList.add("screenShift");
   document.querySelector("#game").classList.add("hidden");
+
+  document.querySelector("#gameSound").pause();
+  document.querySelector("#losingSound").currentTime = 0;
+  document.querySelector("#losingSound").play();
 
   stopGame();
 
