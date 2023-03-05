@@ -237,3 +237,29 @@
     filter: grayscale(75%) blur(0.5px);
   }
 }
+
+/* timer */
+
+.shrink {
+  animation-name: shrink;
+  animation-duration: 30s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shrink {
+  0% {
+    scale: 1 1;
+    background-color: limegreen;
+  }
+
+  50% {
+    background-color: rgb(255, 230, 0);
+  }
+
+  100% {
+    scale: 0 1;
+    background-color: red;
+  }
+}

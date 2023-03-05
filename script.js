@@ -44,8 +44,8 @@ function gameStart() {
   // events for clicking
   addClickEvent();
 
-  // checking for points and lives
-  // displayPoints();
+//  start timer
+startTimer();
 }
 
 function addFalling() {
@@ -130,7 +130,7 @@ function clickGood() {
   }
   get2Points();
 
-  if (points >= 20) {
+  if (points >= 300) {
     level_complete();
   }
 
@@ -175,12 +175,12 @@ function clickBad() {
   bad.addEventListener("animationend", restartAll);
 
   // losing points + life
-  if (bad == document.querySelector(".lose2points") && lives >= 0) {
-    losing2Points();
-  } else if (bad == document.querySelector(".lose4points") && lives >= 0) {
-    losing4Points();
+  if (bad == document.querySelector(".lose20points") && lives >= 0) {
+    losing20Points();
+  } else if (bad == document.querySelector(".lose40points") && lives >= 0) {
+    losing40Points();
   } else {
-    losing6Points();
+    losing60Points();
   }
   minusLife();
 }
@@ -228,40 +228,40 @@ function get2Points() {
   console.log("you're getting points");
 
   //adding one point
-  points += 2;
+  points += 30;
   console.log("you have " + points + " points");
 
   // calling the displayPoints function
   displayPoints();
 }
 
-function losing2Points() {
-  console.log("you're losing 2 points");
+function losing20Points() {
+  console.log("you're losing 20 points");
 
   //adding one point
-  points -= 2;
+  points -= 20;
   console.log("you have " + points + " points left");
 
   // calling the displayPoints function
   displayPoints();
 }
 
-function losing4Points() {
-  console.log("you're losing 4 points");
+function losing40Points() {
+  console.log("you're losing 40 points");
 
   //adding one point
-  points -= 4;
+  points -= 40;
   console.log("you have " + points + " points left");
 
   // calling the displayPoints function
   displayPoints();
 }
 
-function losing6Points() {
-  console.log("you're losing 6 points");
+function losing60Points() {
+  console.log("you're losing 60 points");
 
   //adding one point
-  points -= 6;
+  points -= 60;
   console.log("you have " + points + " points left");
 
   // calling the displayPoints function
@@ -519,7 +519,7 @@ function displayPoints() {
   console.log("display points:" + points);
 
   // showing the points on the game screen
-  document.querySelector("#score").textContent = "Points: " + points;
+  document.querySelector("#score").textContent = "Lines of code: " + points;
 }
 
 // Losing and gaining lives
@@ -557,6 +557,24 @@ function displayPlusLife() {
   document.querySelector("#heart" + lives).classList.remove("loseLife");
   document.querySelector("#heart" + lives).classList.add("addLife");
 }
+
+// timer
+function startTimer() {
+   
+    document.querySelector("#time_sprite").classList.add("shrink");
+    document.querySelector("#time_sprite").addEventListener("animationend", deadline);
+}
+
+function deadline() {
+    console.log("End of deadline!");
+
+    if (points >= 300) {
+        level_complete();
+    } else {
+        game_over();
+    }
+}
+
 
 // End of game
 

@@ -157,6 +157,7 @@ img {
 
 #life_board {
   display: grid;
+  position: relative;
   grid-template-columns: 1fr 1fr 1fr;
   z-index: 9999;
   margin-left: 15vw;
@@ -168,12 +169,36 @@ img {
 
 #score_board {
   display: grid;
+  position: relative;
   grid-area: 1/1;
-  margin-top: -1vw;
-  margin-left: 5vw;
-  font-size: 3vw;
-  /* background-color: rgb(185, 76, 149) */
+  top: 3.8vh;
+  left: 1vw;
+  font-size: 2vw;
 }
+
+#time_board {
+  position: relative;
+} 
+
+#time_container {
+  position: absolute;
+  width: 50%;
+  aspect-ratio: 30/6;
+  border: 2px solid black;
+  background-color: rgba(208, 204, 204, 0.383);
+  top: 3vh;
+  left: -31vw;
+}
+
+#time_sprite {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: limegreen;
+  transform-origin: right;
+}
+
+
 
 #start {
   grid-area: 1 / 1;
