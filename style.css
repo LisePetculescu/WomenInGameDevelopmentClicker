@@ -1,6 +1,7 @@
 body {
   margin: 0;
   overflow: hidden;
+  font-size: 2vw;
 }
 
 img {
@@ -133,8 +134,9 @@ img {
   background-color: rgb(79, 165, 96);
   display: grid;
   grid-area: 1 / 1;
-  position: relative;
+  position: absolute;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
 }
 
 #game_over {
@@ -173,7 +175,7 @@ img {
   display: grid;
   position: relative;
   grid-area: 1/1;
-  top: 3.8vh;
+  top: 3.8vw;
   left: 1vw;
   font-size: 2vw;
 }
@@ -188,7 +190,7 @@ img {
   aspect-ratio: 30/6;
   border: 2px solid black;
   background-color: rgba(208, 204, 204, 0.383);
-  top: 3vh;
+  top: 2vw;
   left: -31vw;
 }
 
@@ -224,6 +226,14 @@ img {
 #start_screen.hidden */
 .hidden {
   display: none !important;
-  /* !important */
   /* visibility: hidden; */
+}
+.good p {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.bad p {
+  margin: 0;
+  white-space: nowrap;
 }

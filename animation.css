@@ -1,69 +1,66 @@
 /* Animations */
 .falling {
   animation-name: falling;
-  animation-duration: 9s;
+  animation-duration: 6s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  /* transform-origin: 0%; */
 }
 
 @keyframes falling {
   0% {
-    transform: translate(0, -10vh);
+    transform: translate(0, -10vw);
   }
 
   60% {
-    transform: translate(0, 120vh);
+    transform: translate(0, 70vw);
   }
 
   100% {
-    transform: translate(-100vw, 120vh);
+    transform: translate(-100vw, 70vw);
   }
 }
 .falling2 {
   animation-name: falling2;
-  animation-duration: 9s;
+  animation-duration: 6s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-delay: 3s;
+  animation-delay: 2s;
 }
 @keyframes falling2 {
   0% {
-    transform: translate(0, -10vh);
+    transform: translate(0, -10vw);
   }
 
   60% {
-    transform: translate(0, 120vh);
+    transform: translate(0, 70vw);
   }
 
   100% {
-    transform: translate(-100vw, 120vh);
+    transform: translate(-100vw, 70vw);
   }
 }
 .falling3 {
   animation-name: falling3;
-  animation-duration: 9s;
+  animation-duration: 6s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-delay: 6s;
+  animation-delay: 4s;
 }
 
 @keyframes falling3 {
   0% {
-    transform: translate(0, -10vh);
+    transform: translate(0, -10vw);
   }
   60% {
-    transform: translate(0, 120vh);
+    transform: translate(0, 70vw);
   }
   100% {
-    transform: translate(-100vw, 120vh);
+    transform: translate(-100vw, 70vw);
   }
 }
 
 .paused {
-  /* animation-name: paused; */
   animation-play-state: paused;
-  /* animation-fill-mode: forwards; */
 }
 
 .clickBadMove {
@@ -129,19 +126,18 @@
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   image-rendering: smooth;
-  /* transform-origin: 0%; */
 }
 
 @keyframes clickGoodMove {
   0% {
-    transform: translate(0vw, 0vh);
+    transform: translate(0vw, 0vw);
     filter: drop-shadow(0px 0px 10px rgb(0, 255, 0));
   }
   60% {
-    transform: translate(0vw, 70vh);
+    transform: translate(0vw, 40vw);
   }
   100% {
-    transform: translate(70vw, 70vh);
+    transform: translate(70vw, 40vw);
   }
 }
 
@@ -215,7 +211,7 @@
 
 .shrink {
   animation-name: shrink;
-  animation-duration: 30000s;
+  animation-duration: 60s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
   animation-fill-mode: forwards;

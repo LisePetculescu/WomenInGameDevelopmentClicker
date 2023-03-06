@@ -1,5 +1,3 @@
-// document.querySelector("#credits").classList.remove("hidden");
-
 "use-strict";
 console.log("hello JS");
 
@@ -11,8 +9,9 @@ let lives = 0;
 function start() {
   console.log("start is starting");
 
-  // remove level complete screen
+  // remove level complete + game over screen
   document.querySelector("#level_complete").classList.add("hidden");
+  document.querySelector("#game_over").classList.add("hidden");
   // hide credits page
   document.querySelector("#credits").classList.add("hidden");
   // show start screen
@@ -77,38 +76,6 @@ function addClickEvent() {
   document
     .querySelectorAll(".bad")
     .forEach((bad) => bad.addEventListener("mousedown", clickBad));
-
-  // document
-  //   .querySelector("#amyHennig_container")
-  //   .addEventListener("mousedown", clickAmyHennig);
-  // document
-  //   .querySelector("#meganFox_container")
-  //   .addEventListener("mousedown", clickMeganFox);
-  // document
-  //   .querySelector("#kimSwift_container")
-  //   .addEventListener("mousedown", clickKimSwift);
-  // document
-  //   .querySelector("#corrinneYu_container")
-  //   .addEventListener("mousedown", clickCorrinneYu);
-  // document
-  //   .querySelector("#jadeRaymond_container")
-  //   .addEventListener("mousedown", clickJadeRaymond);
-
-  // document
-  //   .querySelector("#mileyCyrus_container")
-  //   .addEventListener("mousedown", clickMileyCyrus);
-  // document
-  //   .querySelector("#janeAusten_container")
-  //   .addEventListener("mousedown", clickJaneAusten);
-  // document
-  //   .querySelector("#liseNorgaard_container")
-  //   .addEventListener("mousedown", clickLiseNorgaard);
-  // document
-  //   .querySelector("#merylStreep_container")
-  //   .addEventListener("mousedown", clickMerylStreep);
-  // document
-  //   .querySelector("#janeFonda_container")
-  //   .addEventListener("mousedown", clickJaneFonda);
 }
 
 // Adding animations to the clicking
@@ -144,26 +111,7 @@ function clickGood() {
     level_complete();
   }
 
-  // // remove event so you can only mousedown once at a time
-  // document
-  //   .querySelector("#amyHennig_container")
-  //   .removeEventListener("mousedown", clickAmyHennig);
 
-  // // pausing amyHennig
-  // document.querySelector("#amyHennig_container").classList.add("paused");
-
-  // // adding the clickGood animation to amyHennig
-  // document.querySelector("#amyHennig_sprite").classList.add("clickGood");
-
-  // // when animation clickGood done, restart falling animation
-  // document
-  //   .querySelector("#amyHennig_container")
-  //   .addEventListener("animationend", restartAmyHennig);
-
-  // // adding points + life
-  // getPoints();
-  // getPoints();
-  // plusLife();
 }
 
 function clickBad() {
@@ -222,13 +170,6 @@ function restartAll() {
   all.offsetLeft;
 
   addFalling();
-  // if (all == document.querySelector(".fall1")) {
-  //   all.classList.add("falling");
-  // } else if (all == document.querySelector(".fall2")) {
-  //   all.classList.add("falling2");
-  // } else if (all == document.querySelector(".fall3")) {
-  //   all.classList.add("falling3");
-  // }
 
   // restarting the event looking for clicks on elements
   document
@@ -285,253 +226,6 @@ function losing60Points() {
   // calling the displayPoints function
   displayPoints();
 }
-
-// function clickMeganFox() {
-//   console.log("Megan Fox clicked");
-
-//   // remove event so you can only mousedown once at a time
-//   document
-//     .querySelector("#meganFox_container")
-//     .removeEventListener("mousedown", clickMeganFox);
-
-//   // pausing meganFox
-//   document.querySelector("#meganFox_container").classList.add("paused");
-
-//   // adding the clickGood animation to meganFox
-//   document.querySelector("#meganFox_sprite").classList.add("clickGood");
-
-//   // when animation clickGood done, restart falling animation
-//   document
-//     .querySelector("#meganFox_container")
-//     .addEventListener("animationend", restartMeganFox);
-
-//   // adding points
-//   getPoints();
-//   getPoints();
-// }
-
-// function clickKimSwift() {
-//   console.log("Kim Swift clicked");
-
-//   // remove event so you can only mousedown once at a time
-//   document
-//     .querySelector("#kimSwift_container")
-//     .removeEventListener("mousedown", clickKimSwift);
-
-//   // pausing kimSwift
-//   document.querySelector("#kimSwift_container").classList.add("paused");
-
-//   // adding the clickGood animation to kimSwift
-//   document.querySelector("#kimSwift_sprite").classList.add("clickGood");
-
-//   // when animation clickGood done, restart falling animation
-//   document
-//     .querySelector("#kimSwift_container")
-//     .addEventListener("animationend", restartKimSwift);
-
-//   // adding points
-//   getPoints();
-//   getPoints();
-// }
-
-// function clickCorrinneYu() {
-//   console.log("Corrinne Yu clicked");
-
-//   // remove event so you can only mousedown once at a time
-//   document
-//     .querySelector("#corrinneYu_container")
-//     .removeEventListener("mousedown", clickCorrinneYu);
-
-//   // pausing corrinneYu
-//   document.querySelector("#corrinneYu_container").classList.add("paused");
-
-//   // adding the clickGood animation to corrinneYu
-//   document.querySelector("#corrinneYu_sprite").classList.add("clickGood");
-
-//   // when animation clickGood done, restart falling animation
-//   document
-//     .querySelector("#corrinneYu_container")
-//     .addEventListener("animationend", restartCorrinneYu);
-
-//   // adding points
-//   getPoints();
-//   getPoints();
-// }
-
-// function clickJadeRaymond() {
-//   console.log("Jade Raymond clicked");
-
-//   // remove event so you can only mousedown once at a time
-//   document
-//     .querySelector("#jadeRaymond_container")
-//     .removeEventListener("mousedown", clickJadeRaymond);
-
-//   // pausing jadeRaymond
-//   document.querySelector("#jadeRaymond_container").classList.add("paused");
-
-//   // adding the clickGood animation to jadeRaymond
-//   document.querySelector("#jadeRaymond_sprite").classList.add("clickGood");
-
-//   // when animation clickGood done, restart falling animation
-//   document
-//     .querySelector("#jadeRaymond_container")
-//     .addEventListener("animationend", restartJadeRaymond);
-
-//   // adding points
-//   getPoints();
-//   getPoints();
-// }
-
-// Restarting animations
-
-// function restartAmyHennig() {
-//   console.log("restarting Amy Hennig animation");
-
-//   //removing the restart event
-//   document
-//     .querySelector("#amyHennig_container")
-//     .removeEventListener("animationend", restartAmyHennig);
-
-//   // removing the clickGood animation class
-//   document.querySelector("#amyHennig_sprite").classList.remove("clickGood");
-
-//   // removing the pause animation class
-//   document.querySelector("#amyHennig_container").classList.remove("paused");
-
-//   // restarting the falling animation
-//   document.querySelector("#amyHennig_container").classList.remove("falling");
-//   document.querySelector("#amyHennig_container").offsetLeft;
-//   document.querySelector("#amyHennig_container").classList.add("falling");
-
-//   // restarting the event looking for clicks on amyHennig
-//   document
-//     .querySelector("#amyHennig_container")
-//     .addEventListener("mousedown", clickAmyHennig);
-// }
-
-// function restartMeganFox() {
-//   console.log("restarting meganFox animation");
-
-//   //removing the restart event
-//   document
-//     .querySelector("#meganFox_container")
-//     .removeEventListener("animationend", restartMeganFox);
-
-//   // removing the clickGood animation class
-//   document.querySelector("#meganFox_sprite").classList.remove("clickGood");
-
-//   // removing the pause animation class
-//   document.querySelector("#meganFox_container").classList.remove("paused");
-
-//   // restarting the falling animation
-//   document.querySelector("#meganFox_container").classList.remove("falling2");
-//   document.querySelector("#meganFox_container").offsetLeft;
-//   document.querySelector("#meganFox_container").classList.add("falling2");
-
-//   // restarting the event looking for clicks on meganFox
-//   document
-//     .querySelector("#meganFox_container")
-//     .addEventListener("mousedown", clickMeganFox);
-// }
-
-// function restartKimSwift() {
-//   console.log("restarting kimSwift animation");
-
-//   //removing the restart event
-//   document
-//     .querySelector("#kimSwift_container")
-//     .removeEventListener("animationend", restartKimSwift);
-
-//   // removing the clickGood animation class
-//   document.querySelector("#kimSwift_sprite").classList.remove("clickGood");
-
-//   // removing the pause animation class
-//   document.querySelector("#kimSwift_container").classList.remove("paused");
-
-//   // restarting the falling animation
-//   document.querySelector("#kimSwift_container").classList.remove("falling2");
-//   document.querySelector("#kimSwift_container").offsetLeft;
-//   document.querySelector("#kimSwift_container").classList.add("falling2");
-
-//   // restarting the event looking for clicks on kimSwift
-//   document
-//     .querySelector("#kimSwift_container")
-//     .addEventListener("mousedown", clickKimSwift);
-// }
-
-// function restartCorrinneYu() {
-//   console.log("restarting corrinneYu animation");
-
-//   //removing the restart event
-//   document
-//     .querySelector("#corrinneYu_container")
-//     .removeEventListener("animationend", restartCorrinneYu);
-
-//   // removing the clickGood animation class
-//   document.querySelector("#corrinneYu_sprite").classList.remove("clickGood");
-
-//   // removing the pause animation class
-//   document.querySelector("#corrinneYu_container").classList.remove("paused");
-
-//   // restarting the falling animation
-//   document.querySelector("#corrinneYu_container").classList.remove("falling3");
-//   document.querySelector("#corrinneYu_container").offsetLeft;
-//   document.querySelector("#corrinneYu_container").classList.add("falling3");
-
-//   // restarting the event looking for clicks on corrinneYu
-//   document
-//     .querySelector("#corrinneYu_container")
-//     .addEventListener("mousedown", clickCorrinneYu);
-// }
-
-// function restartJadeRaymond() {
-//   console.log("restarting jadeRaymond animation");
-
-//   //removing the restart event
-//   document
-//     .querySelector("#jadeRaymond_container")
-//     .removeEventListener("animationend", restartJadeRaymond);
-
-//   // removing the clickGood animation class
-//   document.querySelector("#jadeRaymond_sprite").classList.remove("clickGood");
-
-//   // removing the pause animation class
-//   document.querySelector("#jadeRaymond_container").classList.remove("paused");
-
-//   // restarting the falling animation
-//   document.querySelector("#jadeRaymond_container").classList.remove("falling3");
-//   document.querySelector("#jadeRaymond_container").offsetLeft;
-//   document.querySelector("#jadeRaymond_container").classList.add("falling3");
-
-//   // restarting the event looking for clicks on jadeRaymond
-//   document
-//     .querySelector("#jadeRaymond_container")
-//     .addEventListener("mousedown", clickJadeRaymond);
-// }
-
-// Getting points
-
-// function getPoints() {
-//   console.log("you're getting points");
-
-//   //adding one point
-//   points++;
-//   console.log("you have " + points + " points");
-
-//   // calling the displayPoints function
-//   displayPoints();
-// }
-
-// function losePoints() {
-//   console.log("you're losing points");
-
-//   //adding one point
-//   points--;
-//   console.log("you have " + points + " points left");
-
-//   // calling the displayPoints function
-//   displayPoints();
-// }
 
 function displayPoints() {
   console.log("display points:" + points);
@@ -626,6 +320,7 @@ function game_over() {
   stopGame();
 
   document.querySelector("#restartBTN").addEventListener("click", gameStart);
+  document.querySelector("#backBTN3").addEventListener("click", start);
 }
 
 function stopGame() {
