@@ -10,7 +10,6 @@ let lives = 0;
 
 function start() {
   console.log("start is starting");
-  
 
   // remove level complete screen
   document.querySelector("#level_complete").classList.add("hidden");
@@ -49,11 +48,11 @@ function gameStart() {
   // events for clicking
   addClickEvent();
 
-//  start timer
-startTimer();
+  //  start timer
+  startTimer();
 
-document.querySelector("#gameSound").currentTime = 0;
-document.querySelector("#gameSound").play();
+  document.querySelector("#gameSound").currentTime = 0;
+  document.querySelector("#gameSound").play();
 }
 
 function addFalling() {
@@ -206,6 +205,7 @@ function clickBad() {
 function restartAll() {
   console.log("restarting animation");
   let all = this;
+  console.log(this);
 
   //removing the restart event
   all.removeEventListener("animationend", restartAll);
@@ -220,15 +220,17 @@ function restartAll() {
   // restarting the falling animation
   all.classList.remove("falling", "falling2", "falling3");
   all.offsetLeft;
-  if (all == document.querySelector(".fall1")) {
-    all.classList.add("falling");
-  } else if (all == document.querySelector(".fall2")) {
-    all.classList.add("falling2");
-  } else {
-    all.classList.add("falling3");
-  }
 
-  // restarting the event looking for clicks on amyHennig
+  addFalling();
+  // if (all == document.querySelector(".fall1")) {
+  //   all.classList.add("falling");
+  // } else if (all == document.querySelector(".fall2")) {
+  //   all.classList.add("falling2");
+  // } else if (all == document.querySelector(".fall3")) {
+  //   all.classList.add("falling3");
+  // }
+
+  // restarting the event looking for clicks on elements
   document
     .querySelectorAll(".good")
     .forEach((good) => good.addEventListener("mousedown", clickGood));
@@ -576,21 +578,21 @@ function displayPlusLife() {
 
 // timer
 function startTimer() {
-   
-    document.querySelector("#time_sprite").classList.add("shrink");
-    document.querySelector("#time_sprite").addEventListener("animationend", deadline);
+  document.querySelector("#time_sprite").classList.add("shrink");
+  document
+    .querySelector("#time_sprite")
+    .addEventListener("animationend", deadline);
 }
 
 function deadline() {
-    console.log("End of deadline!");
+  console.log("End of deadline!");
 
-    if (points >= 300) {
-        level_complete();
-    } else {
-        game_over();
-    }
+  if (points >= 300) {
+    level_complete();
+  } else {
+    game_over();
+  }
 }
-
 
 // End of game
 
@@ -607,9 +609,8 @@ function level_complete() {
   stopGame();
 
   // back to start screen button
- document.querySelector("#backBTN").addEventListener("click", start)
-document.querySelector("#start_screen").classList.add("screenShift");
- 
+  document.querySelector("#backBTN").addEventListener("click", start);
+  document.querySelector("#start_screen").classList.add("screenShift");
 }
 
 function game_over() {
@@ -624,9 +625,7 @@ function game_over() {
 
   stopGame();
 
-  document.querySelector("#restartBTN").addEventListener("click", gameStart)
-    
-  
+  document.querySelector("#restartBTN").addEventListener("click", gameStart);
 }
 
 function stopGame() {
@@ -643,10 +642,21 @@ function stopGame() {
   document
     .querySelectorAll(".fall3")
     .forEach((fall3) => fall3.classList.remove("falling3"));
+  document
+    .querySelectorAll(".fall1")
+    .forEach((fall1) => fall1.classList.remove("paused"));
+  document
+    .querySelectorAll(".fall2")
+    .forEach((fall2) => fall2.classList.remove("paused"));
+  document
+    .querySelectorAll(".fall3")
+    .forEach((fall3) => fall3.classList.remove("paused"));
 
   document.querySelectorAll(".fall1").forEach((fall1) => fall1.offsetLeft);
   document.querySelectorAll(".fall2").forEach((fall2) => fall2.offsetLeft);
   document.querySelectorAll(".fall3").forEach((fall3) => fall3.offsetLeft);
+
+  // addFalling();
 
   // remove click events
   document

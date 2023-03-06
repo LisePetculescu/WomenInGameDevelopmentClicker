@@ -15,6 +15,8 @@ img {
   /* make it follow the screen size */
   aspect-ratio: 16 / 9;
   width: 100vw;
+
+  user-select: none;
 }
 
 #game {
@@ -178,7 +180,7 @@ img {
 
 #time_board {
   position: relative;
-} 
+}
 
 #time_container {
   position: absolute;
@@ -197,8 +199,6 @@ img {
   background-color: limegreen;
   transform-origin: right;
 }
-
-
 
 #start {
   grid-area: 1 / 1;
