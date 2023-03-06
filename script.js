@@ -67,6 +67,78 @@ function addFalling() {
   document
     .querySelectorAll(".fall3")
     .forEach((fall3) => fall3.classList.add("falling3"));
+
+  document
+    .querySelectorAll(".fall1")
+    .forEach((fall1) => fall1.addEventListener("animationend", exitBad));
+  document
+    .querySelectorAll(".fall2")
+    .forEach((fall2) => fall2.addEventListener("animationend", exitBad));
+  document
+    .querySelectorAll(".fall3")
+    .forEach((fall3) => fall3.addEventListener("animationend", exitBad));
+}
+
+function exitBad() {
+  /*  document
+    .querySelectorAll(".good")
+    .forEach((good) => good.addEventListener("mousedown", exitGood));
+ */
+
+  this.classList.remove("falling", "falling2", "falling3");
+  this.classList.add("badExit");
+  /*
+
+  document
+    .querySelectorAll(".fall1")
+    .forEach((fall1) => fall1.classList.remove("falling"));
+
+  document
+    .querySelectorAll(".fall2")
+    .forEach((fall2) => fall2.classList.remove("falling2"));
+
+  document
+    .querySelectorAll(".fall3")
+    .forEach((fall3) => fall3.classList.remove("falling3"));
+  document
+    .querySelectorAll(".fall1")
+    .forEach((fall1) => fall1.classList.add("badExit"));
+
+  document
+    .querySelectorAll(".fall2")
+    .forEach((fall2) => fall2.classList.add("badExit"));
+
+  document
+    .querySelectorAll(".fall3")
+    .forEach((fall3) => fall3.classList.add("badExit"));
+*/
+}
+
+function exitGood() {
+  this.classList.remove("falling", "falling2", "falling3");
+  this.classList.add("goodExit");
+
+  /*
+  document
+    .querySelectorAll(".good")
+    .forEach((good) => good.removeEventListener("animationend", exitBad));
+  document
+    .querySelectorAll(".good")
+    .forEach((good) => good.classList.add("goodExit"));
+ */
+
+  // document
+  //   .querySelectorAll(".fall2")
+  //   .forEach((fall2) => fall2.removeEventListener("animationend", exitBad));
+  // document
+  //   .querySelectorAll(".fall2")
+  //   .forEach((fall2) => fall2.classList.add("goodExit"));
+  // document
+  //   .querySelectorAll(".fall3")
+  //   .forEach((fall3) => fall3.removeEventListener("animationend", exitBad));
+  // document
+  //   .querySelectorAll(".fall3")
+  //   .forEach((fall3) => fall3.classList.add("goodExit"));
 }
 
 function addClickEvent() {
@@ -77,38 +149,6 @@ function addClickEvent() {
   document
     .querySelectorAll(".bad")
     .forEach((bad) => bad.addEventListener("mousedown", clickBad));
-
-  // document
-  //   .querySelector("#amyHennig_container")
-  //   .addEventListener("mousedown", clickAmyHennig);
-  // document
-  //   .querySelector("#meganFox_container")
-  //   .addEventListener("mousedown", clickMeganFox);
-  // document
-  //   .querySelector("#kimSwift_container")
-  //   .addEventListener("mousedown", clickKimSwift);
-  // document
-  //   .querySelector("#corrinneYu_container")
-  //   .addEventListener("mousedown", clickCorrinneYu);
-  // document
-  //   .querySelector("#jadeRaymond_container")
-  //   .addEventListener("mousedown", clickJadeRaymond);
-
-  // document
-  //   .querySelector("#mileyCyrus_container")
-  //   .addEventListener("mousedown", clickMileyCyrus);
-  // document
-  //   .querySelector("#janeAusten_container")
-  //   .addEventListener("mousedown", clickJaneAusten);
-  // document
-  //   .querySelector("#liseNorgaard_container")
-  //   .addEventListener("mousedown", clickLiseNorgaard);
-  // document
-  //   .querySelector("#merylStreep_container")
-  //   .addEventListener("mousedown", clickMerylStreep);
-  // document
-  //   .querySelector("#janeFonda_container")
-  //   .addEventListener("mousedown", clickJaneFonda);
 }
 
 // Adding animations to the clicking
@@ -125,14 +165,15 @@ function clickGood() {
   good.removeEventListener("mousedown", clickGood);
 
   // pausing animation
-  good.classList.add("paused");
+  // good.classList.add("paused");
   // good.classList.remove("falling");
 
   // adding the clickGood animation to amyHennig
-  good.querySelector("img").classList.add("clickGoodMove");
+  // good.querySelector("img").classList.add("clickGoodMove");
 
   // when animation clickGood done, restart falling animation
-  good.addEventListener("animationend", restartAll);
+  good.removeEventListener("animationend", exitBad);
+  good.addEventListener("animationend", exitGood);
 
   // adding points + life
   if (good == document.querySelector(".pointsLife") && lives < 3) {
