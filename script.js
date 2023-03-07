@@ -14,10 +14,10 @@ function start() {
   document.querySelector("#game_over").classList.add("hidden");
   // hide credits page
   document.querySelector("#credits").classList.add("hidden");
-  // show start screen
-  document.querySelector("#start_screen").classList.remove("hidden");
   // hide game screen
   document.querySelector("#game").classList.add("hidden");
+  // show start screen
+  document.querySelector("#start_screen").classList.remove("hidden");
   // add function to start button
   document.querySelector("#startGameBTN").addEventListener("click", gameStart);
   // add function to credits button
@@ -110,8 +110,6 @@ function clickGood() {
   if (points >= 300) {
     level_complete();
   }
-
-
 }
 
 function clickBad() {
@@ -370,11 +368,6 @@ function creditsPage() {
   document.querySelector("#credits").classList.remove("hidden");
   // back to start screen button
   document.querySelector("#backBTN2").addEventListener("click", start);
-}
-
-// restart the game
-function restartGame() {
-  console.log("restartGame");
 }
 
 function resetPoints() {
