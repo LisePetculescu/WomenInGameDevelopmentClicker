@@ -349,8 +349,6 @@ function stopGame() {
   document.querySelectorAll(".fall2").forEach((fall2) => fall2.offsetLeft);
   document.querySelectorAll(".fall3").forEach((fall3) => fall3.offsetLeft);
 
-  // addFalling();
-
   // remove click events
   document
     .querySelectorAll(".good")
